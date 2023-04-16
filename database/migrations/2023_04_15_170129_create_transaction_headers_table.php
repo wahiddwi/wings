@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('total'); // numeric
             $table->date('date'); // numeric
+            $table->string('status');
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

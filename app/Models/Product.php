@@ -11,8 +11,15 @@ class Product extends Model
 
     protected $table = 'product';
 
+    protected $guarded = [];
+
     public function transactionDetails()
     {
         return $this->hasMany(TransactionDetail::class, 'product_code', 'id');
+    }
+
+    public function getDiscountedPriceAttribute()
+    {
+        return $this->price * (1 - $this->discount / 100);
     }
 }

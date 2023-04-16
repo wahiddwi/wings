@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('discount'); // numeric
             $table->string('dimension');
             $table->string('unit');
+            $table->string('images');
 
             $table->timestamps();
         });
